@@ -1,0 +1,18 @@
+-- Wyświetl wszystkie dane z tabeli
+select * from SimpleTable;
+-- wyświetli tylko kolumny Name dla wszystkich rekordów
+select name from SimpleTable;
+-- Wyświetl dane wszystkich osób, które mają więcej niż 45 lat.
+select * from SimpleTable where Age > 45;
+-- Wyświetl wszystkie dane dla osób o imieniu "Alice Johnson"
+select * from SimpleTable where Name = 'Alice Johnson';
+-- Wyświetl dane wszystkich osób, których wiek wynosi dokładnie 25 lat.
+select * from SimpleTable where Age = 25;
+-- Wyświetl wszystkie rekordy, posortowane według kolumny JoinDate w kolejności rosnącej.
+select * from SimpleTable order by JoinDate asc;
+-- Wyświetl dane wszystkich osób, które dołączyły po 1 stycznia 2023 roku.
+select * from SimpleTable where JoinDate > '2023-01-01';
+-- Policz, ile osób ma więcej niż 40 lat.
+select COUNT(*) from SimpleTable where Age > 40;
+-- Wyświetl dane osób, których adres e-mail kończy się na "@example.com".
+select * from SimpleTable where Email like '%@example.com';
