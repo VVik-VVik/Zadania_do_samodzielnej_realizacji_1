@@ -80,3 +80,39 @@ FROM Produkty
 JOIN Zamowienia ON Produkty.id=Zamowienia.produkt_id
 GROUP BY  Produkty.nazwa
 HAVING total_ilosc > 3;
+
+-- Wyświetl nazwę produktu, datę zamówienia, ilość zamówień.
+SELECT Produkty.nazwa, Zamowienia.data_zamowienia, Zamowienia.ilosc
+FROM Produkty
+JOIN Zamowienia ON Produkty.id=Zamowienia.produkt_id;
+-- poprawnie
+
+-- 13. Wyświetl imię, nazwisko użytkowników, którzy złożyli zamówienie w 2025 roku.
+SELECT Uzytkownicy.imie, Uzytkownicy.nazwisko, Zamowienia.data_zamowienia
+FROM Uzytkownicy
+JOIN Zamowienia ON Uzytkownicy.id=Zamowienia.uzytkownik_id
+WHERE Zamowienia.data_zamowienia LIKE '2025%';
+-- poprawnie
+
+-- 14. Wyświetl nazwę produktu, datę zamówienia oraz ilość dla produktów z kategorii 'Dom'.
+SELECT Produkty.kategoria, Produkty.nazwa, Zamowienia.data_zamowienia, Zamowienia.ilosc
+FROM Produkty
+JOIN Zamowienia ON Produkty.id=Zamowienia.produkt_id
+WHERE Produkty.kategoria LIKE 'Dom';
+-- poprawnie
+
+-- 15.Wyświetl imię, nazwisko oraz nazwy produktów dla użytkowników, którzy mają więcej niż 30 lat.
+SELECT Uzytkownicy.imie, Uzytkownicy.nazwisko, Uzytkownicy.wiek, Produkty.nazwa
+FROM Uzytkownicy
+JOIN Zamowienia ON Uzytkownicy.id=Zamowienia.uzytkownik_id
+JOIN Produkty ON Produkty.id=Zamowienia.produkt_id
+WHERE Uzytkownicy.wiek > 30;
+-- poprawnie
+
+-- 16. Wyświetl nazwy produktów i ilość, których cena jest wyższa niż 1000 zł
+SELECT Produkty.nazwa, Produkty.cena, Zamowienia.ilosc
+FROM Produkty
+JOIN Zamowienia ON Produkty.id=Zamowienia.produkt_id
+WHERE Produkty.cena > 1000;
+-- poprawnie
+
