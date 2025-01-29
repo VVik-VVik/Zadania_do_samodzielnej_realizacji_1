@@ -27,7 +27,7 @@ SELECT FirstName, LastName, Age FROM Users WHERE Age BETWEEN 25 AND 35;
 -- popprawnie
 
 -- 8. Wyświetl użytkowników, którzy mają mniej niż 25 lat lub więcej niż 35 lat.
-
+SELECT * FROM Users WHERE Age < 25 OR Age > 35;
 -- popprawnie
 
 -- 9. Wyświetl użytkowników, którzy mają dokładnie 22 lub 27 lat.
@@ -43,7 +43,7 @@ SELECT FirstName, LastName, Age FROM Users ORDER BY Age DESC;
 -- popprawnie
 
 -- 12. Posortuj użytkowników według nazwiska, a następnie według imienia.
-
+SELECT * FROM Users ORDER BY LastName, FirstName;
 -- popprawnie
 
 -- 13. Policz wszystkich użytkowników w tabeli.
@@ -67,7 +67,7 @@ SELECT SUM(Age) AS SUM_wiek FROM Users;
 -- popprawnie
 
 -- 18. Znajdź liczbę użytkowników w każdej grupie wiekowej większej niż 30 lat.
-
+SELECT COUNT(*) AS UsersAbove30 FROM Users WHERE Age > 30;
 -- popprawnie
 
 -- 19. Pogrupuj użytkowników według nazwiska i znajdź, ilu użytkowników ma takie samo nazwisko.
